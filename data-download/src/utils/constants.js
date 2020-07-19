@@ -1,0 +1,11 @@
+export const USER_TYPE = {
+  NORMAL_USER: 'User',
+  ADMIN: 'Admin'
+}
+
+
+export const ERROR_CODE = {
+  ERROR_CODE_CHECK_LOGIN: 401,
+  ERROR_CODE_NO_PERMISSION: 403,
+  ERROR_CODE_NOT_FOUND: 404
+}
