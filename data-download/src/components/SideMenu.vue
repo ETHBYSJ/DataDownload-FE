@@ -19,19 +19,33 @@
       <el-menu-item index="/about/agreement">{{$t('m.Agreement')}}</el-menu-item>
       <el-menu-item index="/about/downloading">{{$t('m.Downloading')}}</el-menu-item>
     </el-submenu>
-    <!--
-    <el-menu-item index="/help"><i class="el-icon-document"></i>{{$t('m.Help')}}</el-menu-item>
-    -->
+    <!--管理员可见-->
+    <el-submenu index="admin" v-if="this.isAuthenticated && this.isAdmin">
+      <template slot="title"><i class="el-icon-user-solid"></i>{{$t('m.Admin')}}</template>
+      <el-menu-item index="/admin/users">{{$t('m.Users')}}</el-menu-item>
+      <el-menu-item index="/admin/file-review">{{$t('m.File_Review')}}</el-menu-item>
+    </el-submenu>
+
   </el-menu>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   export default {
     name: 'SideMenu',
     data() {
       return {
         currentPath: ''
       }
+    },
+    /*
+    mounted() {
+      console.log(this.isAdmin)
+      console.log(this.isAuthenticated)
+    },
+    */
+    computed: {
+      ...mapGetters(['user', 'isAuthenticated', 'isAdmin'])
     },
     methods:{
       handleOpen() {

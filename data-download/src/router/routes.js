@@ -10,6 +10,8 @@ import NoPermission from "../views/errors/403"
 import InternalError from "../views/errors/500"
 import Introduction from "../views/Introduction";
 import Profile from "../components/Profile";
+import UserList from "../views/admin/UserList";
+import FileReview from "../views/admin/FileReview";
 
 
 export default [
@@ -57,6 +59,16 @@ export default [
         path: '/help',
         name: 'help',
         component: Help
+      },
+      {
+        path: '/admin/users',
+        name: 'users',
+        component: UserList
+      },
+      {
+        path: '/admin/file-review',
+        name: 'review',
+        component: FileReview
       }
     ]
   },

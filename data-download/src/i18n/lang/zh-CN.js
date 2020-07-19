@@ -14,6 +14,9 @@ export const m = {
   Phone_Number: '电话号码',
   School: '学校/组织',
   Role: '角色',
+  Status: '状态',
+  User_Type: '用户类型',
+  Create_User: '创建新用户',
   Password: '密码',
   Password_Again: '请再次输入密码',
   GO_Login: '登录',
@@ -87,5 +90,16 @@ export const m = {
   Back: '返回',
   Introduction: '简介',
   Agreement: '使用协议',
-  Check_Login: '请登录'
+  Check_Login: '请登录',
+  Admin: '管理',
+  Users: '用户列表',
+  File_Review: '文件审核',
+  Get_User_List_Error: '获取用户列表错误',
+  Update_User_Status_Success: '更新用户状态成功',
+  Update_User_Status_Error: '更新用户状态错误',
+  Admin_User: '管理员用户',
+  Normal_User: '普通用户',
+  Submit: '提交',
+  Create_User_Error: '创建新用户失败',
+  Create_User_Success: '创建新用户成功'
 }

@@ -14,6 +14,9 @@ export const m = {
   Phone_Number: 'Phone Number',
   School: 'School/Organization',
   Role: 'Role/Title',
+  Status: 'Status',
+  User_Type: 'User Type',
+  Create_User: 'Create New User',
   Password: 'Password',
   Password_Again: 'Please Enter Password Again',
   GO_Login: 'Login',
@@ -87,5 +90,16 @@ export const m = {
   Back: 'Back',
   Introduction: 'Introduction',
   Agreement: 'Agreement',
-  Check_Login: 'Please Login'
+  Check_Login: 'Please Login',
+  Admin: 'Admin',
+  Users: 'Users',
+  File_Review: 'File Review',
+  Get_User_List_Error: 'Get User List Error',
+  Update_User_Status_Success: 'Update User Status Success',
+  Update_User_Status_Error: 'Update User Status Error',
+  Admin_User: 'Admin User',
+  Normal_User: 'Normal User',
+  Submit: 'Submit',
+  Create_User_Error: 'Create User Error',
+  Create_User_Success: 'Create User Success'
 }

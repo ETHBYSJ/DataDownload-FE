@@ -9,7 +9,7 @@ const service = axios.create({
 
 service.interceptors.response.use(
   response => {
-    console.log(response)
+    // console.log(response)
     if(response.data.code !== 0 && response.config.url !== '/api/v1/user/me') {
       store.dispatch('clearUser')
       // 允许游客进入
