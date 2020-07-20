@@ -101,5 +101,21 @@ export const m = {
   Normal_User: 'Normal User',
   Submit: 'Submit',
   Create_User_Error: 'Create User Error',
-  Create_User_Success: 'Create User Success'
+  Create_User_Success: 'Create User Success',
+  My_Files: 'My Files',
+  File_Name: 'File Name',
+  File_Path: 'File Path',
+  File_Size: 'File Size',
+  File_Review_Status: 'By File Review Status',
+  Get_My_Files_Error: 'Get My Files Error',
+  Reviewed: 'Reviewed',
+  UnReviewed: 'UnReviewed',
+  Reviewed_Only: 'Reviewed Only',
+  UnReviewed_Only: 'UnReviewed Only',
+  Review_All: 'All',
+  Get_Files_Error: 'Get Files Error',
+  OwnerID: 'OwnerID',
+  File_If_Review: 'File Review Status',
+  Update_Review_Success: 'Update Review Status Success',
+  Update_Review_Error: 'Update Review Status Error'
 }

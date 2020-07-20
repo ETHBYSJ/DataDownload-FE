@@ -17,6 +17,7 @@
         :ownerId="item.ownerId"
         :share="item.share"
         :key="item.name"
+        :review="item.review"
         v-on:delete="onDelete">
       </ListingItem>
     </div>
@@ -44,7 +45,6 @@
     },
     methods: {
       onDelete() {
-        // console.log("ondelete")
         this.$emit('delete')
       }
     },

@@ -101,5 +101,21 @@ export const m = {
   Normal_User: '普通用户',
   Submit: '提交',
   Create_User_Error: '创建新用户失败',
-  Create_User_Success: '创建新用户成功'
+  Create_User_Success: '创建新用户成功',
+  My_Files: '我的文件',
+  File_Name: '文件名',
+  File_Path: '文件路径',
+  File_Size: '文件大小',
+  File_Review_Status: '按审核情况',
+  Get_My_Files_Error: '获取我的文件错误',
+  Reviewed: '审核通过',
+  UnReviewed: '未审核通过',
+  Reviewed_Only: '审核通过',
+  UnReviewed_Only: '未审核通过',
+  Review_All: '全部',
+  Get_Files_Error: '获取文件错误',
+  OwnerID: '所有者ID',
+  File_If_Review: '审核情况',
+  Update_Review_Success: '更新审核状态成功',
+  Update_Review_Error: '更新审核状态失败'
 }

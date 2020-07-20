@@ -1,9 +1,9 @@
-<!--文件审核-->
+<!--我的文件-->
 <template>
   <div class="files-wrapper">
     <el-card class="files-card">
       <div slot="header" class="files-header">
-        <span>{{$t('m.File_List')}}</span>
+        <span>{{$t('m.My_Files')}}</span>
         <div class="search-wrapper">
           <!--通过审核状态进行过滤-->
           <el-dropdown trigger="click" class="filter-mode" @command="handleFilter">
@@ -32,12 +32,6 @@
         ref="table"
         :data="fileList"
         :fit="true">
-        <!--uid-->
-        <el-table-column
-          width="100"
-          prop="OwnerID"
-          :label="$t('m.OwnerID')">
-        </el-table-column>
         <!--name-->
         <el-table-column
           prop="Name"
@@ -57,17 +51,18 @@
         </el-table-column>
         <!--status-->
         <el-table-column
-          :label="$t('m.File_If_Review')">
+          :label="$t('m.File_Review_Status')">
           <template slot-scope="scope">
-            <el-switch
-              v-model="scope.row.Review"
-              active-text=""
-              inactive-text=""
-              @change="updateReviewStatus(scope.row)">
-            </el-switch>
+            <el-tag type="success" v-if="scope.row.Review === 1">
+              {{$t('m.Reviewed')}}
+            </el-tag>
+            <el-tag type="danger" v-else>
+              {{$t('m.UnReviewed')}}
+            </el-tag>
           </template>
         </el-table-column>
       </el-table>
+
       <div class="options">
         <el-pagination
           class="page"
@@ -82,40 +77,32 @@
 </template>
 
 <script>
-  import api from '../../api'
+  import api from '../api'
+  import {mapGetters} from 'vuex'
   export default {
-    name: 'FileReview',
+    name: 'MyFiles',
     data() {
       return {
+        // searchLoading: false,
         loading: false,
         fileList: [],
-        pageSize: 2,
         total: 0,
+        pageSize: 2,
         keyword: '',
+        // 0: 未审核 1: 已审核 2: 全部
         category: 2,
-        currentPage: 1,
+        currentPage: 1
       }
     },
+    computed: {
+      ...mapGetters(['user'])
+    },
     mounted() {
-      this.getFiles(1)
+      this.getMyFiles(1)
     },
     methods: {
-      updateReviewStatus(row) {
-        let params = {
-          id: row.ID,
-          review: row.Review
-        }
-        api.admin.updateReviewStatus(params).then(res => {
-          if(res.data.code === 0) {
-            this.$success(this.$t('m.Update_Review_Success'))
-            this.getFiles(1)
-          }
-          else {
-            this.$error(this.$t('m.Update_Review_Error'))
-          }
-        }).catch(() => {
-          this.$error(this.$t('m.Update_Review_Error'))
-        })
+      doSearch() {
+        this.getMyFiles(1)
       },
       handleFilter(command) {
         switch(command) {
@@ -135,36 +122,35 @@
             this.category = 2
           }
         }
-        this.getFiles(1)
+        this.getMyFiles(1)
       },
-      doSearch() {
-        this.getFiles(1)
-      },
-      currentChange(page) {
-        this.currentPage = page
-        this.getFiles(page)
-      },
-      getFiles(page) {
+      getMyFiles(page) {
         this.loading = true
         let params = {
           page: page,
           pageSize: this.pageSize,
           keyword: this.keyword,
+          uid: this.user.id,
           category: this.category
         }
-        api.admin.getFiles(params).then(res => {
+        api.user.getMyFiles(params).then(res => {
           this.loading = false
           if(res.data.code === 0) {
             this.total = res.data.data.count
             this.fileList = res.data.data.files
           }
           else {
-            this.$error(this.$t('m.Get_Files_Error'))
+            this.$error(this.$t('m.Get_My_Files_Error'))
           }
+
         }).catch(() => {
           this.loading = false
-          this.$error(this.$t('m.Get_Files_Error'))
+          this.$error(this.$t('m.Get_My_Files_Error'))
         })
+      },
+      currentChange(page) {
+        this.currentPage = page
+        this.getMyFiles(page)
       }
     }
   }
@@ -206,8 +192,8 @@
       }
       .options {
         float: right;
-        margin-right: 20px;
         margin-top: 20px;
+        margin-right: 20px;
       }
     }
   }

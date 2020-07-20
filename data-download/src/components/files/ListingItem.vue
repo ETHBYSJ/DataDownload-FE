@@ -15,9 +15,17 @@
         <el-input size="small" class="edit-name" v-model="newName" @click.stop.native="dummy"></el-input>
         <el-button :loading="saving" size="small" class="edit-btn" type="primary" @click.stop.native="handleSave">{{$t('m.Save')}}</el-button>
       </div>
-
+      <!--文件审核状态-->
+      <div class="review-status">
+        <el-tag type="success" v-if="!this.isDir && this.review">
+          {{$t('m.Reviewed')}}
+        </el-tag>
+        <el-tag type="danger" v-if="!this.isDir && !this.review">
+          {{$t('m.UnReviewed')}}
+        </el-tag>
+      </div>
       <!--某些操作图标-->
-      <div class="hidden-items" v-show="show">
+      <div class="hidden-items" :style="visibility">
         <template v-if="this.user.id === this.ownerId">
           <el-tooltip
             :class="[privacyActive?'privacy-in':'privacy']"
@@ -94,6 +102,7 @@
     },
     data: function() {
       return {
+        visibility: 'visibility: hidden',
         isEditing: false,
         newName: '',
         oldName: '',
@@ -111,12 +120,11 @@
         ...mapGetters(['user'])
     },
     mounted() {
-      // console.log(this.user.id)
       this.newName = this.name
       this.oldName = this.name
       this.currentShare = this.share
     },
-    props: ['isDir', 'name', 'modified', 'size', 'path', 'ownerId', 'share'],
+    props: ['isDir', 'name', 'modified', 'size', 'path', 'ownerId', 'share', 'review'],
     watch: {
       'name'(val) {
         this.newName = val
@@ -129,6 +137,14 @@
         if(newVal !== oldVal) {
           this.$emit('share', newVal)
         }
+      },
+      'show'(val) {
+        if(val) {
+          this.visibility = 'visibility: visible'
+        }
+        else {
+          this.visibility = 'visibility: hidden'
+        }
       }
     },
     methods: {
@@ -139,7 +155,6 @@
           share: status
         }
         api.files.setShare(params).then(res => {
-          console.log(res)
           if(res.data.code === 0) {
             this.currentShare = status
             this.$success(this.$t('m.Set_Share_Success'))
@@ -212,7 +227,6 @@
           return
         }
         api.files.renameFile(params).then(res => {
-          console.log(res)
           this.saving = false
           if(res.data.code !== 0) {
             this.$error(this.$t('m.Rename_Error'))
@@ -249,7 +263,6 @@
           path: this.path
         }
         api.files.delete(params).then(res => {
-          console.log(res)
           if(res.data.code === 0) {
             this.$success(this.$t('m.Delete_Success'))
             this.$emit('delete')
@@ -262,21 +275,18 @@
         })
       },
       handleEnterRename() {
-        // console.log("enter rename")
         this.renameActive = true
       },
       handleLeaveRename() {
         this.renameActive = false
       },
       handleEnterDownload() {
-        // console.log("download")
         this.downloadActive = true
       },
       handleLeaveDownload() {
         this.downloadActive = false
       },
       handleEnterDelete() {
-        // console.log("delete")
         this.deleteActive = true
       },
       handleLeaveDelete() {
@@ -320,6 +330,10 @@
       }
 
     }
+    .review-status {
+      flex: none;
+      width: 100px;
+    }
 
     .size {
       flex: none;
@@ -330,6 +344,7 @@
     .hidden-items {
       flex: none;
       width: 200px;
+      // flex: 1 1;
       font-size: 16px;
       align-self: center;
       margin-left: 10px;

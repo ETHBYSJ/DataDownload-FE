@@ -78,11 +78,9 @@
     mounted() {
       // 文件选择后的回调
       Bus.$on('fileAdded', () => {
-        // console.log('文件已选择')
       })
       // 文件上传成功的回调
       Bus.$on('fileSuccess', () => {
-        // console.log('文件上传成功')
         this.fetchData()
       })
     },
@@ -115,7 +113,6 @@
     },
     methods: {
       changeRadio(value) {
-        console.log(value)
         this.asc = value
         this.fetchData()
       },
@@ -160,7 +157,6 @@
           keyword: this.search
         }
         api.files.listDirByKeyword(params).then(res => {
-          console.log(res)
           this.searchLoading = false
           if(res.data.code === 0) {
             this.fileListInfo = res.data.data
@@ -179,7 +175,6 @@
         this.fetchData()
       },
       doAddFolder() {
-        // console.log(this.form.name)
         if(this.form.name === '') {
           this.$error(this.$t('m.New_Folder_Name_Empty'))
           this.dialogVisible = false
@@ -223,11 +218,9 @@
         //let params
       },
       handleUploadFile() {
-        // console.log("upload file")
         Bus.$emit('openUploader', {})
       },
       handleRefresh() {
-        console.log(this.asc)
         this.refreshLoading = true
         let url = this.$route.path
         // 向后端请求前，需要对路径做一些处理
@@ -249,7 +242,6 @@
           }
           else {
               this.fileListInfo = res.data.data
-              // console.log(this.fileListInfo)
           }
         }).catch(() => {
           this.refreshLoading = false
@@ -276,7 +268,6 @@
           }
           else {
             this.fileListInfo = res.data.data
-            console.log(this.fileListInfo)
           }
         }).catch(() => {
           this.$error(this.$t('m.List_File_Error'))

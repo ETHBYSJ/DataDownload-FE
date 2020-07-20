@@ -213,7 +213,7 @@
           userType: 'User'
         },
         currentPage: 1,
-        pageSize: 2,
+        pageSize: 10,
         total: 0,
 
         rules: {
@@ -246,7 +246,6 @@
     },
     methods: {
       handleSubmit() {
-        console.log(this.form)
         this.$refs.form.validate((valid) => {
           if(valid) {
             this.submitting = true
@@ -274,9 +273,7 @@
           id: row.ID,
           status: row.Status
         }
-        console.log(params)
         api.admin.updateUserStatus(params).then(res => {
-          console.log(res)
           if(res.data.code === 0) {
             this.$success(this.$t('m.Update_User_Status_Success'))
           }
@@ -302,7 +299,6 @@
           else {
             this.$error(this.$t('m.Get_User_List_Error'))
           }
-          console.log(res)
         }).catch(() => {
           this.loading = false
           this.$error(this.$t('m.Get_User_List_Error'))

@@ -19,6 +19,7 @@
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="profile">{{$t('m.User_Profile')}}</el-dropdown-item>
             <el-dropdown-item command="logout">{{$t('m.Logout')}}</el-dropdown-item>
+            <el-dropdown-item command="myfiles">{{$t('m.My_Files')}}</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </template>
@@ -78,12 +79,16 @@
       handleUserMenu(command) {
         switch(command) {
           case "profile": {
-            // console.log("profile")
             this.$router.push({name: 'profile'})
             break
           }
           case "logout": {
             this.handleLogout()
+            break
+          }
+          case 'myfiles': {
+            console.log("myfiles")
+            this.$router.push({name: 'myfiles'})
             break
           }
           default: {

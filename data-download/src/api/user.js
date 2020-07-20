@@ -39,5 +39,12 @@ export default {
       method: 'get',
       params: data
     })
+  },
+  getMyFiles(data) {
+    return request({
+      url: '/api/v1/user/my_files',
+      method: 'get',
+      params: data
+    })
   }
 }

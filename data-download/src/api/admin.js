@@ -21,5 +21,19 @@ export default {
       method: 'post',
       data: data
     })
+  },
+  getFiles(data) {
+    return request({
+      url: '/api/v1/admin/files',
+      method: 'get',
+      params: data
+    })
+  },
+  updateReviewStatus(data) {
+    return request({
+      url: '/api/v1/admin/review',
+      method: 'get',
+      params: data
+    })
   }
 }
