@@ -87,7 +87,7 @@
             break
           }
           case 'myfiles': {
-            console.log("myfiles")
+            // console.log("myfiles")
             this.$router.push({name: 'myfiles'})
             break
           }

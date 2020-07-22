@@ -24,7 +24,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
   .content-app {
     // padding-top: 20px;
     padding-top: 70px;

@@ -66,7 +66,8 @@
       return {
         params: {},
         options: {
-          target: 'http://localhost:8080/api/v1/file/chunk',
+          // target: 'http://127.0.0.1:8080/api/v1/file/chunk',
+          target: '/api/v1/file/chunk',
           chunkSize: '2048000',
           fileParameterName: 'file',
           maxChunkRetries: 3,

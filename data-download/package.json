@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "element-ui": "^2.13.2",
+    "file-saver": "^2.0.2",
     "filesize": "^6.1.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.27.0",

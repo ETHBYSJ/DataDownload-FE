@@ -117,5 +117,7 @@ export const m = {
   OwnerID: '所有者ID',
   File_If_Review: '审核情况',
   Update_Review_Success: '更新审核状态成功',
-  Update_Review_Error: '更新审核状态失败'
+  Update_Review_Error: '更新审核状态失败',
+  Download_Error: '下载失败',
+  File_Private: '文件是私有的'
 }

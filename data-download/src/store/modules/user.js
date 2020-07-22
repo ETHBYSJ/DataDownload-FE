@@ -1,5 +1,6 @@
 import types from '../types'
 import api from '../../api'
+import storage from '../../utils/storage'
 import {USER_TYPE} from '../../utils/constants'
 
 const state = {
@@ -19,6 +20,7 @@ const getters = {
 const mutations = {
   [types.CHANGE_USER] (state, {user}) {
     state.user = user
+    storage.set("user", user)
     if(user.language) {
       this.$i18n.locale = user.language
     }

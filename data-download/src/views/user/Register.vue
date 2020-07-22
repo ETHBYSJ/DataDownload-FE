@@ -105,7 +105,8 @@
         return (m == null) ? "" : m[1];
       }
       let checkMobileOrTel = (value) => {
-        return (/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/.test(trim(value))) || (/^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/.test(trim(value)));;
+        // return (/^(?:13\d|15[89])-?\d{5}(\d{3}|\*{3})$/.test(trim(value))) || (/^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/.test(trim(value)));;
+        return (/^1(3|4|5|6|7|8|9)\d{9}$/.test(value))
       }
       let checkPhoneNumber = (rule, value, callback) => {
         if(checkMobileOrTel(value)) {

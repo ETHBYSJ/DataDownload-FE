@@ -53,7 +53,7 @@
         <el-table-column
           :label="$t('m.File_Review_Status')">
           <template slot-scope="scope">
-            <el-tag type="success" v-if="scope.row.Review === 1">
+            <el-tag type="success" v-if="scope.row.Review === true">
               {{$t('m.Reviewed')}}
             </el-tag>
             <el-tag type="danger" v-else>
@@ -133,6 +133,7 @@
           uid: this.user.id,
           category: this.category
         }
+        // console.log(params)
         api.user.getMyFiles(params).then(res => {
           this.loading = false
           if(res.data.code === 0) {

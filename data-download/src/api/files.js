@@ -1,6 +1,14 @@
 import request from './request'
 
 export default {
+  download(data) {
+    return request({
+      url: '/api/v1/file/download',
+      method: 'post',
+      data: data,
+      responseType: 'blob'
+    })
+  },
   setShare(data) {
     return request({
       url: '/api/v1/file/set_share',

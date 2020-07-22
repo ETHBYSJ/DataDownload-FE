@@ -117,5 +117,7 @@ export const m = {
   OwnerID: 'OwnerID',
   File_If_Review: 'File Review Status',
   Update_Review_Success: 'Update Review Status Success',
-  Update_Review_Error: 'Update Review Status Error'
+  Update_Review_Error: 'Update Review Status Error',
+  Download_Error: 'Download Error',
+  File_Private: 'This File is Private'
 }

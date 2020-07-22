@@ -6,7 +6,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import i18n from './i18n'
 import locale from 'element-ui/lib/locale/lang/zh-CN'
-import router from './router'
+
 import uploader from 'vue-simple-uploader'
 import store from './store'
 import filters from "./utils/filters"
@@ -15,6 +15,7 @@ import './styles/index.less'
 
 import './style.less'
 
+import router from './router'
 // register filters
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
