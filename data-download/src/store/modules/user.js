@@ -8,7 +8,21 @@ const state = {
 }
 
 const getters = {
-  user: state => state.user,
+  user: (state) => {
+    if(!(state.user) || state.user.id === undefined) {
+      // vuex中没有数据，尝试从local storage中取
+      let user = storage.get("user")
+      if(user && user.id) {
+        state.user = user
+        return user
+      }
+      return {}
+    }
+    else {
+      return state.user
+    }
+    // return state.user
+  },
   isAuthenticated: (state, getters) => {
     return !!getters.user.id
   },
