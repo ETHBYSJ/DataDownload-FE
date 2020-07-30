@@ -86,6 +86,7 @@ export const m = {
   Privacy: 'Set Privacy',
   Set_Share_Success: 'Set Share Status Success',
   Set_Share_Error: 'Set Share Status Error',
+  Change_Share_State: 'Change Share',
   Go_Home: 'Go Home',
   Back: 'Back',
   Introduction: 'Introduction',

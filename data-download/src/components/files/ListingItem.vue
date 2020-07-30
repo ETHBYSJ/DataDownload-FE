@@ -4,7 +4,8 @@
     :style="isDir?'cursor:pointer':''"
     @click.native.prevent.stop="open"
     @mouseenter.native="handleMouseEnter"
-    @mouseleave.native="handleMouseLeave">
+    @mouseleave.native="handleMouseLeave"
+    @contextmenu.prevent.native="emitContextMenu">
       <div class="flex-container" slot="content" >
         <!--icon-->
         <div class="icon">
@@ -165,6 +166,7 @@
   import filesize from 'filesize'
   import LineItem from "../LineItem"
   import {mapGetters} from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
     name: 'ListingItem',
@@ -189,14 +191,15 @@
       }
     },
     computed: {
-        ...mapGetters(['user'])
+        ...mapGetters(['user']),
+        ...mapState(['files','op'])
     },
     mounted() {
       this.newName = this.name
       this.oldName = this.name
       this.currentShare = this.share
     },
-    props: ['isDir', 'name', 'modified', 'size', 'path', 'ownerId', 'share', 'review'],
+    props: ['fileId','isDir', 'name', 'modified', 'size', 'path', 'ownerId', 'share', 'review'],
     watch: {
       'name'(val) {
         this.newName = val
@@ -216,6 +219,31 @@
         }
         else {
           this.visibility = 'visibility: hidden'
+        }
+      },
+      //监听store.files 的状态变化
+      'files.files'(val) {
+        if(val.includes(this.fileId)) {
+          switch(this.files.op)
+          {
+            case 1:
+              if(!this.isDir&&(this.user.id===this.ownerId||this.currentShare)){
+                this.handleDownload()
+              }
+            break
+            case 2:
+              if(this.user.id===this.ownerId){
+                this.handleSetShare(!this.currentShare)
+              }
+              break
+            case 3:
+              if(this.user.id===this.ownerId){
+                this.handleDelete()
+              }
+              break
+            default:
+              this.dummy()
+          }
         }
       }
     },
@@ -389,6 +417,10 @@
       },
       handleLeaveDelete() {
         this.deleteActive = false
+      },
+      // context-menu 发送消息
+      emitContextMenu(e){
+         this.$emit('context-menu',this.fileId,e)  
       }
     }
   }
@@ -408,7 +440,7 @@
 
     .icon {
       flex: none;
-      width: 50px;
+      width: 25px;
       font-size: 16px;
       align-self: center;
     }

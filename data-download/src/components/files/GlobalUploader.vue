@@ -123,7 +123,7 @@
         // 所有分块上传成功后的回调函数
         // console.log("onFileSuccess")
         let res = JSON.parse(response)
-        // console.log(res)
+        console.log(response)
         // 服务器自定义的错误
         if(res.code !== 0) {
           this.$error(this.$t('Upload_Failed'))
