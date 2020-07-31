@@ -1,6 +1,6 @@
 import Home from "../views/Home";
 import Agreement from "../views/Agreement";
-import Downloading from "../views/Downloading";
+import Instructions from "../views/Instructions";
 import Help from "../views/Help";
 import Login from "../views/user/Login";
 import Register from "../views/user/Register";
@@ -29,12 +29,12 @@ export default [
   {
     path: '/',
     component: Home,
-    redirect: '/introduction',
+    redirect: '/instructions',
     children: [
       {
-        path: '/introduction',
-        name: 'introduction',
-        component: Introduction
+        path: '/instructions',
+        name: 'instructions',
+        component: Instructions
       },
       {
         path: '/about/agreement',
@@ -42,9 +42,9 @@ export default [
         component: Agreement
       },
       {
-        path: '/about/downloading',
-        name: 'downloading',
-        component: Downloading
+        path: '/about/introduction',
+        name: 'introduction',
+        component: Introduction
       },
       {
         path: '/files/*',
