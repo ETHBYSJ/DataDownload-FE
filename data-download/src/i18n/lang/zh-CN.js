@@ -82,7 +82,7 @@ export const m = {
   By_Modified: '按修改时间',
   Ascend: '升序',
   Descend: '降序',
-  Share: '共享',
+  Share: '设为共享',
   Privacy: '设为私有',
   Set_Share_Success: '设置共享状态成功',
   Set_Share_Error: '设置共享状态失败',

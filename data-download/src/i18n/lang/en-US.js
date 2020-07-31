@@ -82,7 +82,7 @@ export const m = {
   By_Modified: 'By_Modified',
   Ascend: 'Ascend',
   Descend: 'Descend',
-  Share: 'Share',
+  Share: 'Set Share',
   Privacy: 'Set Privacy',
   Set_Share_Success: 'Set Share Status Success',
   Set_Share_Error: 'Set Share Status Error',
