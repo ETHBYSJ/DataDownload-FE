@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="cn">
+    <div v-if="!enActive" class="cn">
       <h2>背景</h2>
       <p>
         为了更好地研究大规模影像数据集对深度学习模型的训练和推理的影响，以及不同来源数据的影响，我们在此公布一组来自于多家上海三甲医院和社区医院的多中心数据集，数据量、患者数量、多中心、正位胸片、异常结果来自于影像报告的提取.
@@ -44,13 +44,7 @@
         1)	目前的多源数据中，包括的异常表现，在分类标签重按顺序排列: 气胸，2) 肺气肿，3) 肺内钙化，4) PICC， 5) 动脉弓迂曲，6) 动脉弓钙化，7) 动脉异常，8) 小片影，9) 心影增大，10) 斑片影，11) 肺内阴影，12) 空洞，13) 肺内占位，14) 肺纹理增多，15) 水肿，16) 肺结节，17) 肺门异常，18) 胸腔积液，19) 胸膜增厚，20) 胸膜粘连，21) 胸膜钙化，22) 胸膜异常，23) 脊柱侧弯，24) 起搏器植入后，25) 间质改变。
       </p>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="en">
+    <div v-else class="en">
       <h2>Background</h2>
       <p>
         Chest radiography is extensively used to screen and diagnose pulmonary and cardiac diseases. The advantages of its clinical practicality, efficiency, and cost-effectiveness make chest radiography the most accessible imaging test for pulmonary disorders, especially in primary hospitals. Currently, the interpretation of a chest radiograph mainly relies on radiologists.
@@ -121,6 +115,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'Introduction',
     data() {
@@ -169,6 +164,12 @@
             index: '3'
           }
         ]
+      }
+    },
+    computed: {
+      enActive(){
+        let lang = this.$i18n.locale;
+        return lang === "en-US" ? true : false;
       }
     }
   }

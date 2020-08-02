@@ -121,5 +121,8 @@ export const m = {
   Update_Review_Success: '更新审核状态成功',
   Update_Review_Error: '更新审核状态失败',
   Download_Error: '下载失败',
-  File_Private: '文件是私有的'
+  File_Private: '文件是私有的',
+  Description: '数据介绍',
+  License: '协议',
+  Language: '中文'
 }

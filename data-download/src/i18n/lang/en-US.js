@@ -120,5 +120,8 @@ export const m = {
   Update_Review_Success: 'Update Review Status Success',
   Update_Review_Error: 'Update Review Status Error',
   Download_Error: 'Download Error',
-  File_Private: 'This File is Private'
+  File_Private: 'This File is Private',
+  Description: 'Description',
+  License: 'License',
+  Language: 'English'
 }
