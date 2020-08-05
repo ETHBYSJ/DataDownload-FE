@@ -6,14 +6,14 @@
       </el-header>
       <el-container class="main">
         <el-aside width="50%" class="image">
-          <el-image :src="imgUrl" fit="contain" alt="This is an image"/>
+          <el-image :src="imgUrl" fit="contain"  @down.prevent alt="This is an image"/>
         </el-aside>
         <el-main class="side-info">
           <div class="title">{{$t('m.About')}}</div>
           <ul>
-            <li><i class="el-icon-circle-check"></i>aaa</li>
-            <li><i class="el-icon-circle-check"></i>bbb</li>
-            <li><i class="el-icon-circle-check"></i>ccc</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.Info1')}}</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.Info2')}}</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.Info3')}}</li>
           </ul>
           <div class="downloadBtn">
             <el-button type="info" @click="handleDownload" >{{$t('m.Download')}}</el-button>
@@ -48,7 +48,7 @@ import api from '../api'
         tabActiveName:"first",
 
         //图片相对地址
-        imgUrl:require("../assets/logo.png"),
+        imgUrl:require("../assets/img2.png"),
         //数据包名称
         name:'go1.14.6.linux-amd64.tar.gz'
       }

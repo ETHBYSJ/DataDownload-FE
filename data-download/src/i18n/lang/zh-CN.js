@@ -124,5 +124,8 @@ export const m = {
   File_Private: '文件是私有的',
   Description: '数据介绍',
   License: '协议',
-  Language: '中文'
+  Language: '中文',
+  Info1: '胸片图像数据集',
+  Info2: '约8万条带标签数据',
+  Info3: '多个数据来源'
 }

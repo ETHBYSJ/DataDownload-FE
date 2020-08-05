@@ -123,5 +123,8 @@ export const m = {
   File_Private: 'This File is Private',
   Description: 'Description',
   License: 'License',
-  Language: 'English'
+  Language: 'English',
+  Info1: 'Chest Radiograph Dataset',
+  Info2: 'About 80,000 Labeled Data',
+  Info3: 'Multiple Data Sources'
 }
