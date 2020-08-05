@@ -2,7 +2,7 @@
   <div id="header">
 
     <div class="logo">
-      医学图像分享
+      {{$t('m.Title')}}
     </div>
     <el-menu class="menu">
       <template v-if="!isAuthenticated">

@@ -11,12 +11,12 @@
         <el-main class="side-info">
           <div class="title">{{$t('m.About')}}</div>
           <ul>
-            <li><i class="el-icon-circle-check"></i>aaa</li>
-            <li><i class="el-icon-circle-check"></i>bbb</li>
-            <li><i class="el-icon-circle-check"></i>ccc</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.About1')}}</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.About2')}}</li>
+            <li><i class="el-icon-circle-check"></i>{{$t('m.About3')}}</li>
           </ul>
           <div class="downloadBtn">
-            <el-button type="info" @click="handleDownload" >{{$t('m.Download')}}</el-button>
+            <el-button type="primary" @click="handleDownload" >{{$t('m.Download')}}</el-button>
           </div>
         </el-main>
       </el-container>
@@ -38,19 +38,18 @@ import {mapGetters} from 'vuex'
 import api from '../api'
 
   export default {
-    name:"ItemInfo",
+    name: "ItemInfo",
     components : {
       Introduction,
       Agreement
     },
-    data:function () {
+    data: function () {
       return{
         tabActiveName:"first",
-
         //图片相对地址
-        imgUrl:require("../assets/logo.png"),
+        imgUrl: require("../assets/image2.png"),
         //数据包名称
-        name:'go1.14.6.linux-amd64.tar.gz'
+        name: 'example.zip'
       }
     },
     computed:{
@@ -62,33 +61,44 @@ import api from '../api'
     methods:
     {
       handleDownload() {
-        if(this.isAuthenticated) {
-          this.doDownload();
-        }
-        else {
-          this.$router.push('/login')
-        }
+        this.doDownload()
       },
       doDownload() {
-        let data = {
+        let params = {
           name: this.name,
           path: '/'
         }
-        api.files.download(data).then(res => {
-
+        console.log(params)
+        api.files.downloadSession(params).then(res => {
+          console.log(res)
+          if(res.data.code !== 0) {
+            this.$error(this.$t('m.Download_Error'))
+          }
+          else {
+            window.location.href = res.data.data
+          }
+        }).catch(() => {
+          this.$error(this.$t('m.Download_Error'))
+        })
+        // window.location.href = 'http://127.0.0.1:8088/api/v1/file/download_test'
+        /*
+        api.files.downloadStatic(data).then(res => {
+          // console.log(res)
           let link = document.createElement('a')
           let blob = new Blob([res.data], {type: 'octet/stream'})
+          // let objectUrl = URL.createObjectURL(blob)
+          // window.location.href = objectUrl
           link.download = this.name
           link.href = URL.createObjectURL(blob)
           document.body.appendChild(link)
           link.click()
           document.body.removeChild(link)
-          // let blob = new Blob([res.data])
           // saveAs(blob, this.oldName)
 
         }).catch(() => {
           this.$error(this.$t('m.Download_Error'))
         })
+        */
       },
     }
 

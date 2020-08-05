@@ -1,4 +1,5 @@
 export const m = {
+  Title: 'Data Sharing Platform',
   Home: 'Home',
   Login: 'Login',
   Register:'Register',
@@ -124,5 +125,8 @@ export const m = {
   Instructions: 'Instructions',
   Description: 'Description',
   License: 'License',
-  Language: 'English'
+  Language: 'English',
+  About1: 'Chest Radiograph Dataset',
+  About2: 'About 80,000 Labeled Data',
+  About3: 'Multiple Data Sources'
 }
