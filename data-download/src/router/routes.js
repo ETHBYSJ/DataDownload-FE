@@ -1,4 +1,7 @@
 import Home from "../views/Home";
+import Agreement from "../views/Agreement";
+import Instructions from "../views/Instructions";
+import Help from "../views/Help";
 // import Agreement from "../views/Agreement";
 // import Downloading from "../views/Downloading";
 // import Help from "../views/Help";

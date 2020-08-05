@@ -1,4 +1,5 @@
 export const m = {
+  Title: '图像共享平台',
   Home: '首页',
   Login: '登录',
   Register:'注册',
@@ -122,10 +123,17 @@ export const m = {
   Update_Review_Error: '更新审核状态失败',
   Download_Error: '下载失败',
   File_Private: '文件是私有的',
+  Instructions: '使用说明',
   Description: '数据介绍',
   License: '协议',
   Language: '中文',
+<<<<<<< HEAD
   Info1: '胸片图像数据集',
   Info2: '约8万条带标签数据',
   Info3: '多个数据来源'
+=======
+  About1: '胸片数据集',
+  About2: '约80,000带标签的数据',
+  About3: '多数据源'
+>>>>>>> origin/static
 }

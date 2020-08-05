@@ -1,4 +1,5 @@
 export const m = {
+  Title: 'Data Sharing Platform',
   Home: 'Home',
   Login: 'Login',
   Register:'Register',
@@ -121,10 +122,17 @@ export const m = {
   Update_Review_Error: 'Update Review Status Error',
   Download_Error: 'Download Error',
   File_Private: 'This File is Private',
+  Instructions: 'Instructions',
   Description: 'Description',
   License: 'License',
   Language: 'English',
+<<<<<<< HEAD
   Info1: 'Chest Radiograph Dataset',
   Info2: 'About 80,000 Labeled Data',
   Info3: 'Multiple Data Sources'
+=======
+  About1: 'Chest Radiograph Dataset',
+  About2: 'About 80,000 Labeled Data',
+  About3: 'Multiple Data Sources'
+>>>>>>> origin/static
 }
