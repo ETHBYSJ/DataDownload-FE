@@ -35,8 +35,8 @@
 
     padding-left: 20%;
     padding-right: 20%;
-    max-width: 1000px;
-    min-width: 600px;
+    max-width: 1500px;
+    min-width: 640px;
   }
 }
   // .sidemenu-wrapper {

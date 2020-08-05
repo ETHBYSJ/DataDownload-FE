@@ -127,13 +127,7 @@ export const m = {
   Description: '数据介绍',
   License: '协议',
   Language: '中文',
-<<<<<<< HEAD
-  Info1: '胸片图像数据集',
-  Info2: '约8万条带标签数据',
-  Info3: '多个数据来源'
-=======
   About1: '胸片数据集',
   About2: '约80,000带标签的数据',
   About3: '多数据源'
->>>>>>> origin/static
 }
