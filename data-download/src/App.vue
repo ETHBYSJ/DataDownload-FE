@@ -2,7 +2,7 @@
   <div id="app">
     <router-view></router-view>
     <!--上传组件-->
-    <global-uploader></global-uploader>
+    <!-- <global-uploader></global-uploader> -->
   </div>
 </template>
 
@@ -11,7 +11,7 @@
   export default {
     name: 'App',
     components: {
-      GlobalUploader,
+      // GlobalUploader,
     }
   }
 </script>

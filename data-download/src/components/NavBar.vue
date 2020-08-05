@@ -2,7 +2,7 @@
   <div id="header">
 
     <div class="logo">
-      CRADI
+      医学图像分享
     </div>
     <el-menu class="menu">
       <template v-if="!isAuthenticated">
@@ -17,16 +17,16 @@
             {{this.user.email}}<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="profile">{{$t('m.User_Profile')}}</el-dropdown-item>
+            <!-- <el-dropdown-item command="profile">{{$t('m.User_Profile')}}</el-dropdown-item> -->
             <el-dropdown-item command="logout">{{$t('m.Logout')}}</el-dropdown-item>
-            <el-dropdown-item command="myfiles">{{$t('m.My_Files')}}</el-dropdown-item>
+            <!-- <el-dropdown-item command="myfiles">{{$t('m.My_Files')}}</el-dropdown-item> -->
           </el-dropdown-menu>
         </el-dropdown>
       </template>
       <!--语言选择-->
       <el-dropdown trigger="click" class="language-change" @command="handleLanguageSelect">
         <span class="el-dropdown-link">
-          中文<i class="el-icon-arrow-down el-icon--right"></i>
+          {{$t('m.Language')}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="zh-CN">中文</el-dropdown-item>
@@ -78,19 +78,19 @@
       },
       handleUserMenu(command) {
         switch(command) {
-          case "profile": {
-            this.$router.push({name: 'profile'})
-            break
-          }
+          // case "profile": {
+          //   this.$router.push({name: 'profile'})
+          //   break
+          // }
           case "logout": {
             this.handleLogout()
             break
           }
-          case 'myfiles': {
-            // console.log("myfiles")
-            this.$router.push({name: 'myfiles'})
-            break
-          }
+          // case 'myfiles': {
+          //   // console.log("myfiles")
+          //   this.$router.push({name: 'myfiles'})
+          //   break
+          // }
           default: {
             break
           }
@@ -160,7 +160,7 @@
       // background-color: #292928;
       margin-left: 2%;
       margin-right: 2%;
-      font-size: 50px;
+      font-size: 37px;
       // float: left;
       position: absolute;
       line-height: 60px;
