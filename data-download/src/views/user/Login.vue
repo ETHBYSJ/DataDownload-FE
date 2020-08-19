@@ -70,6 +70,7 @@
           if(valid) {
             this.logining = true
             api.user.login(this.loginForm).then(res => {
+              // console.log('success',res)
               if(res.data.code === 0) {
                 // console.log(res)
                 this.logining = false
@@ -81,9 +82,17 @@
                 this.logining = false
                 this.$error(this.$t('m.Login_Failed'))
               }
-            }).catch(() => {
+            }).catch((err) => {
                 this.$error(this.$t('m.Login_Failed'))
                 this.logining = false
+                api.user.activate_request({email:this.loginForm.email}).then(res =>{
+                  // console.log(res,res.data.userId)
+                  this.$store.commit('activateUserId', res.data.data.userId)
+                }).catch(()=>{
+                  this.$error(this.$t('m.Login_Failed'))
+                })
+                  this.handleRoute('/activate')
+                // console.log(err)
             })
           }
           else {
@@ -95,7 +104,16 @@
         // console.log('handle to register')
         this.$router.push({name: 'register'})
       }
-    }
+    },
+    // beforeRouteLeave(to, from, next){
+    //   if(to.name ==='item' && ( this.isActive===false || this.isActive === undefined)){
+    //     this.$router.push('/activate')        
+    //   }
+    //   else
+    //   {
+    //     next()
+    //   }
+    //}
   }
 </script>
 

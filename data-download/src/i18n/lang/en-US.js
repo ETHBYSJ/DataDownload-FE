@@ -128,5 +128,10 @@ export const m = {
   Language: 'English',
   About1: 'Chest Radiograph Dataset',
   About2: 'About 80,000 Labeled Data',
-  About3: 'Multiple Data Sources'
+  About3: 'Multiple Data Sources',
+  NotActivated: 'Not Activated',
+  NotActivatedMessage: 'Please enter the verification code you received',
+  CodeError: 'Verification code format error',
+  ActivateSucceed: 'Activation Succeed',
+  ActivateFail: 'Activation Fail'
 }

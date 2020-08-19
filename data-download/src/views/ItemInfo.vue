@@ -105,12 +105,12 @@ import api from '../api'
         //图片相对地址
         imgUrl: require("../assets/image2.png"),
         //数据包名称
-        // name: 'example.zip'
-        name: 'go1.14.6.linux-amd64.tar.gz'
+        name: 'example.zip'
+        // name: 'go1.14.6.linux-amd64.tar.gz'
       }
     },
     computed:{
-      ...mapGetters(['isAuthenticated'])
+      ...mapGetters(['isAuthenticated', 'user'])
     },
     mounted() {
         this.$on('error',(e)=> {console.log(e)})
@@ -118,9 +118,16 @@ import api from '../api'
     methods:
     {
       handleDownload() {
-        this.dialogVisible = true
+        if(this.isAuthenticated)
+        {
+          this.dialogVisible = true
+        }
+        else{
+          this.$router.push('/login')
+        }
       },
       doDownload() {
+        this.dialogVisible = false
         let params = {
           name: this.name,
           path: '/'

@@ -186,8 +186,9 @@
             api.user.register(this.registerForm).then(res => {
               if(res.data.code === 0) {
                 this.registering = false
-                this.getUser()
-                this.handleRoute('/')
+                // this.getUser()
+                this.$store.commit('activateUserId', res.data.data.userId)
+                this.handleRoute('/Activate')
                 this.$success(this.$t('m.Register_Success'))
               }
               else {

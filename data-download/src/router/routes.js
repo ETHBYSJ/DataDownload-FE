@@ -17,6 +17,7 @@ import Profile from "../components/Profile";
 // import FileReview from "../views/admin/FileReview";
 // import MyFiles from "../views/MyFiles";
 import ItemInfo from "../views/ItemInfo"
+import Activate from "../views/user/Activate"
 
 export default [
   {
@@ -28,6 +29,11 @@ export default [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/Activate',
+    name: 'Activate',
+    component: Activate
   },
   {
     path: '/',

@@ -129,5 +129,10 @@ export const m = {
   Language: '中文',
   About1: '胸片数据集',
   About2: '约80,000带标签的数据',
-  About3: '多数据源'
+  About3: '多数据源',
+  NotActivated: '未激活',
+  NotActivatedMessage: '请输入收到的验证码',
+  CodeError: '验证码格式错误',
+  ActivateSucceed: '激活成功',
+  ActivateFail: '激活失败'
 }
