@@ -41,7 +41,7 @@
             userid:this.user.userId,
             code: (this.code)
           }
-          console.log(data)
+          // console.log(data)
           api.user.activate(data).then(res=>{
             // console.log(res, res.data)
             if(res.data.code === 0){

@@ -133,5 +133,6 @@ export const m = {
   NotActivatedMessage: 'Please enter the verification code you received',
   CodeError: 'Verification code format error',
   ActivateSucceed: 'Activation Succeed',
-  ActivateFail: 'Activation Fail'
+  ActivateFail: 'Activation Fail',
+  DownloadNotice: 'Request Succeed'
 }

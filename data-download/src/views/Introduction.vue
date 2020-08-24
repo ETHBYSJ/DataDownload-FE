@@ -38,7 +38,7 @@
       </p>
       <h2>分类结果表</h2>
       <p>
-        表中’patientID’代表图像的文件名，’data_source’代表文件来源，0是三甲医院1的训练数据，1是三甲医院2的测试数据，2是三甲医院体检数据，3是社区医院数据。数据格式如图: |pateintID|data_resource|label1|label2|.......|label25|
+        表中’file_id’代表图像的文件名,"data_source"代表数据来源，含义如表中所示。数据格式如: |file_id|data_source|label1|label2|.......|label25|
       </p>
       <p>
         1)	目前的多源数据中，包括的异常表现，在分类标签重按顺序排列: 气胸，2) 肺气肿，3) 肺内钙化，4) PICC， 5) 动脉弓迂曲，6) 动脉弓钙化，7) 动脉异常，8) 小片影，9) 心影增大，10) 斑片影，11) 肺内阴影，12) 空洞，13) 肺内占位，14) 肺纹理增多，15) 水肿，16) 肺结节，17) 肺门异常，18) 胸腔积液，19) 胸膜增厚，20) 胸膜粘连，21) 胸膜钙化，22) 胸膜异常，23) 脊柱侧弯，24) 起搏器植入后，25) 间质改变。
@@ -100,11 +100,11 @@
       </p>
       <h2>Classification result</h2>
       <p>
-        Each image links to the label by an item of ‘patientID’.
+        Each image links to the label by an item of ‘file_id’.
       </p>
       <p>
-        data_resource stands for the resource of data. Data sources are listed in the previous table.
-        Result table format: |pateintID|data_resource|label1|label2|.......|label25|
+        data_source stands for the resource of data. Data sources are listed in the previous table.
+        Result table format: |file_id|data_source|label1|label2|.......|label25|
       </p>
       <p>
         The order of the 25 labels is as the following:<br>
@@ -123,44 +123,45 @@
         dataSourceCN: [
           {
             source: '三甲医院1',
-            num: '70824',
+            num: '74082',
             index: '0'
           },
           {
-            source: '三甲医院2',
-            num: '5996',
+            source: '三甲医院2的体检患者',
+            num: '2136',
             index: '1'
           },
           {
-            source: '三甲医院2的体检患者',
-            num: '2130',
+            source: '三甲医院2',
+            num: '6005',
             index: '2'
           },
+
           {
             source: '4家社区医院数据',
-            num: '1804',
+            num: '1774',
             index: '3'
           }
         ],
         dataSourceEN: [
           {
             source: 'Academic hospital 1',
-            num: '70824',
+            num: '74082',
             index: '0'
           },
           {
-            source: 'In-and-out patient from Academic hospital2',
-            num: '5996',
+            source: 'Screening participants from Academic hospital 2',
+            num: '2136',
             index: '1'
           },
           {
-            source: 'Screening participants from Academic hospital 2',
-            num: '2130',
+            source: 'In-and-out patient from Academic hospital2',
+            num: '6005',
             index: '2'
           },
           {
             source: 'Community clinics',
-            num: '1804',
+            num: '1774',
             index: '3'
           }
         ]

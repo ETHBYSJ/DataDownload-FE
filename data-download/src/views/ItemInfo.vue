@@ -27,6 +27,28 @@
         <el-tab-pane :label="$t('m.License')" name="second"><Agreement></Agreement></el-tab-pane>
       </el-tabs>
     </div>
+    <div class="footer">
+      <el-container>
+        <el-main>
+        <h2>友情链接</h2>
+        <ul class="hyper-links">
+          <li><a href="https://www.sjtu.edu.cn">上海交通大学</a></li>
+          <li><a href="http://www.seiee.sjtu.edu.cn">上海交通大学电子信息与电气工程学院</a></li>
+          <li><a href="http://www.cs.sjtu.edu.cn">上海交通大学计算机科学与工程系</a></li>
+          <li><a href="http://epcc.sjtu.edu.cn">上海交通大学EPCC</a></li>
+        </ul>
+        </el-main>
+        <el-aside class="footer-aside">
+          <h2>联系我们</h2>
+          <ul class="contact-info">
+            <li>电子邮件：yshen@cs.sjtu.edu.cn</li>
+            <li>地址：上海交通大学闵行校区计算机科学与工程系</li>
+            <li>邮编: 200240</li>
+          </ul>
+        </el-aside>
+      </el-container> 
+      <p class="contact-us">我们致力于大数据处理、云计算与人工智能方面的研究工作，如果您希望在这些方面开展科研合作与交流，请联系我们。</p>
+    </div>
     <el-dialog
       :title="$t('m.Agreement')"
       :visible.sync="dialogVisible"
@@ -36,34 +58,34 @@
         <br>
         <br>
         <p>
-          &emsp;By registering for downloads from the CRADI Dataset, you are agreeing to this Research Use Agreement.as well as to the Terms of Use of the Shanghai Jiao Tong University Department of Computer Science and Engineering website.
+          &emsp;By registering for downloads from the CRADI Dataset, you are agreeing to this Research Use Agreement.
         </p>
         <p>
-          1. Permission is granted to view and use the CRADI Dataset without charge for personal, non-commercial research purposes only. Any commercial use, sale, or other monetization is prohibited.
+          &emsp;1. Permission is granted to view and use the CRADI Dataset without charge for personal, non-commercial research purposes only. Any commercial use, sale, or other monetization is prohibited.
         </p>
         <p>
-          2. You may make a verbatim copy of the CRADI Dataset for personal, non-commercial research use as permitted in this Research Use Agreement. If another user within your organization wishes to use the CRADI Dataset, they must register as an individual user and comply with all the terms of this Research Use Agreement.
+          &emsp;2. You may make a verbatim copy of the CRADI Dataset for personal, non-commercial research use as permitted in this Research Use Agreement. If another user within your organization wishes to use the CRADI Dataset, they must register as an individual user and comply with all the terms of this Research Use Agreement.
         </p>
         <p>
-          3. YOU MAY NOT DISTRIBUTE, PUBLISH, OR REPRODUCE A COPY of any portion or all of the CRADI Dataset to others without specific prior written permission from the Shanghai Jiaotong University.
+          &emsp;3. YOU MAY NOT DISTRIBUTE, PUBLISH, OR REPRODUCE A COPY of any portion or all of the CRADI Dataset to others without specific prior written permission from the Shanghai Jiaotong University.
         </p>
         <p>
-          4. YOU MAY NOT SHARE THE DOWNLOAD LINK to the CRADI dataset to others. If another user within your organization wishes to use the CRADI Dataset, they must register as an individual user and comply with all the terms of this Research Use Agreement.
+          &emsp;4. YOU MAY NOT SHARE THE DOWNLOAD LINK to the CRADI dataset to others. If another user within your organization wishes to use the CRADI Dataset, they must register as an individual user and comply with all the terms of this Research Use Agreement.
         </p>
         <p>
-          5. You must not modify, reverse engineer, decompile, or create derivative works from the CRADI Dataset. You must not remove or alter any copyright or other proprietary notices in the CRADI Dataset.
+          &emsp;5. You must not modify, reverse engineer, decompile, or create derivative works from the CRADI Dataset. You must not remove or alter any copyright or other proprietary notices in the CRADI Dataset.
         </p>
         <p>
-          6. The CRADI Dataset has not been reviewed or approved by the administrative authority and is for non-clinical, Research Use Only. In no event shall data or images generated through the use of the CRADI Dataset be used or relied upon in the diagnosis or provision of patient care.
+          &emsp;6. The CRADI Dataset has not been reviewed or approved by the administrative authority and is for non-clinical, Research Use Only. In no event shall data or images generated through the use of the CRADI Dataset be used or relied upon in the diagnosis or provision of patient care.
         </p>
         <p>
-          7. THE CRADI DATASET IS PROVIDED "AS IS," AND JIAOTONG UNIVERSITY AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS CRADI DATASET.
+          &emsp;7. THE CRADI DATASET IS PROVIDED "AS IS," AND JIAOTONG UNIVERSITY AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS CRADI DATASET.
         </p>
         <p>
-          8. You will not make any attempt to re-identify any of the individual data subjects. Re-identification of individuals is strictly prohibited. Any re-identification of any individual data subject shall be immediately reported to the School of Medicine.
+          &emsp;8. You will not make any attempt to re-identify any of the individual data subjects. Re-identification of individuals is strictly prohibited. Any re-identification of any individual data subject shall be immediately reported to the School of Medicine.
         </p>
         <p>
-          9. Any violation of this Research Use Agreement or other impermissible use shall be grounds for immediate termination of use of this CRADI Dataset. In the event that the university determines that the recipient has violated this Research Use Agreement or other impermissible use has been made, the univeristy may direct that the undersigned data recipient immediately return all copies of the CRADI Dataset and retain no copies thereof even if you did not cause the violation or impermissible use.
+          &emsp;9. Any violation of this Research Use Agreement or other impermissible use shall be grounds for immediate termination of use of this CRADI Dataset. In the event that the university determines that the recipient has violated this Research Use Agreement or other impermissible use has been made, the univeristy may direct that the undersigned data recipient immediately return all copies of the CRADI Dataset and retain no copies thereof even if you did not cause the violation or impermissible use.
         </p>
         <p>
           &emsp;In consideration for your agreement to the terms and conditions contained here, Shanghai Jiaotong University grants you permission to view and use the CRADI Dataset for personal, non-commercial research. You may not otherwise copy, reproduce, retransmit, distribute, publish, commercially exploit or otherwise transfer any material.
@@ -79,6 +101,20 @@
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible=false">{{$t('m.Cancel')}}</el-button>
         <el-button type="primary" @click="doDownload">{{$t('m.Confirm')}}</el-button>
+      </div>
+    </el-dialog>
+    <el-dialog 
+      :title="$t('m.DownloadNotice')"
+      :visible.sync="downloadVisible"
+      :close-on-click-modal="false">
+      <div v-if="!enActive">
+        <p>正在处理图像，稍后将向您的邮箱发送下载链接。请注意：<b>图像已经添加了水印。</b></p>
+      </div>
+      <div v-else>
+        <p>The images are being processed and a download link will be sent to your email later. Please note that <b>the images have been watermarked</b></p>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="downloadVisible=false">{{$t('m.Confirm')}}</el-button>
       </div>
     </el-dialog>
   </div>
@@ -102,6 +138,8 @@ import api from '../api'
         tabActiveName:"first",
         //协议确认
         dialogVisible: false,
+        //下载确认
+        downloadVisible: false,
         //图片相对地址
         imgUrl: require("../assets/image2.png"),
         //数据包名称
@@ -110,7 +148,11 @@ import api from '../api'
       }
     },
     computed:{
-      ...mapGetters(['isAuthenticated', 'user'])
+      ...mapGetters(['isAuthenticated', 'user']),
+      enActive(){
+        let lang = this.$i18n.locale;
+        return lang === "en-US" ? true : false;
+      }
     },
     mounted() {
         this.$on('error',(e)=> {console.log(e)})
@@ -129,17 +171,19 @@ import api from '../api'
       doDownload() {
         this.dialogVisible = false
         let params = {
-          name: this.name,
-          path: '/'
+          path: "/Data-CRADI/data/raw_data_repository/chestXray/chexpert/",
+          email: this.user.email
         }
-        console.log(params)
+        this.downloadVisible = true
+        // console.log(params)
         api.files.downloadSession(params).then(res => {
           console.log(res)
           if(res.data.code !== 0) {
             this.$error(this.$t('m.Download_Error'))
           }
           else {
-            window.location.href = res.data.data
+            // window.location.href = res.data.data
+            this.$success(this.$t('m.Download_Succeed'))
           }
         }).catch(() => {
           this.$error(this.$t('m.Download_Error'))
@@ -171,45 +215,69 @@ import api from '../api'
 </script>
 
 <style lang='less' scoped>
-    .header {
-      .name {
-        padding: 15px 20px 0 20px;
-        border-bottom: 1px solid #e1e1e1;
-        font-size: 20px;
-      }
-      .main {
-        .image{
-          /deep/ .el-image{
-            width: 100%;
-          }
+  .header {
+    padding-left: 20%;
+    padding-right: 20%;
+    .name {
+      padding: 15px 20px 0 20px;
+      border-bottom: 1px solid #e1e1e1;
+      font-size: 20px;
+    }
+    .main {
+      .image{
+        /deep/ .el-image{
+          width: 100%;
         }
-        .side-info {
-          margin-left: 20px;
-          // display: inline-block;
-          .title{
-            font-size: 18px;
-            font-weight: bold;
-            border-bottom: 1px solid #e1e1e1;
-            height: 20%;
-          }
-          ul {
-            font-size: 16px;
-            color: grey;
-            // height: 40%;
-            li {
-              list-style-type: none;
-              padding: 5px 0px;
-              i {
-                padding-right: 3px;
-              }
+      }
+      .side-info {
+        margin-left: 20px;
+        // display: inline-block;
+        .title{
+          font-size: 18px;
+          font-weight: bold;
+          border-bottom: 1px solid #e1e1e1;
+          height: 20%;
+        }
+        ul {
+          font-size: 16px;
+          color: grey;
+          // height: 40%;
+          li {
+            list-style-type: none;
+            padding: 5px 0px;
+            i {
+              padding-right: 3px;
             }
           }
-          .downloadBtn{
-            height: 15%;
-            margin-top: 10%;
-          }
-
         }
+        .downloadBtn{
+          height: 15%;
+          margin-top: 10%;
+        }
+
       }
+    }
+  }
+  .body {
+    padding-left:20%;
+    padding-right: 20%;
+  }
+  .agreement-wrapper {
+    // word-break: break-word;
+  }
+  .footer {
+    padding: 0 20%;
+    background-color: #f6f9fa;
+    color: #585858;
+    .footer-aside{
+      padding: 20px;
+      .contact-info {
+        // padding: 20px;
+      } 
+    }
+    .contact-us{
+      text-align: center;
+      padding-bottom: 20px;
+    }
   }
 </style>

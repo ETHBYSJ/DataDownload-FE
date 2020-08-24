@@ -33,9 +33,9 @@
     // padding-right: 10px;
     // padding-left: 205px;
 
-    padding-left: 20%;
-    padding-right: 20%;
-    max-width: 1500px;
+    // padding-left: 20%;
+    // padding-right: 20%;
+    // max-width: 1500px;
     min-width: 640px;
   }
 }

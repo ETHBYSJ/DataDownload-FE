@@ -134,5 +134,6 @@ export const m = {
   NotActivatedMessage: '请输入收到的验证码',
   CodeError: '验证码格式错误',
   ActivateSucceed: '激活成功',
-  ActivateFail: '激活失败'
+  ActivateFail: '激活失败',
+  DownloadNotice: 'Request Succeed'
 }
