@@ -30,7 +30,7 @@ export default {
   },
   activate(data) {
     return request({
-      url: '/api/v1/user/validate',
+      url: '/api/v1/user/activate',
       method: 'post',
       data: data
     })

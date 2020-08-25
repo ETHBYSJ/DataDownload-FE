@@ -46,7 +46,7 @@
             <li>邮编: 200240</li>
           </ul>
         </el-aside>
-      </el-container> 
+      </el-container>
       <p class="contact-us">我们致力于大数据处理、云计算与人工智能方面的研究工作，如果您希望在这些方面开展科研合作与交流，请联系我们。</p>
     </div>
     <el-dialog
@@ -103,7 +103,7 @@
         <el-button type="primary" @click="doDownload">{{$t('m.Confirm')}}</el-button>
       </div>
     </el-dialog>
-    <el-dialog 
+    <el-dialog
       :title="$t('m.DownloadNotice')"
       :visible.sync="downloadVisible"
       :close-on-click-modal="false">
@@ -171,7 +171,8 @@ import api from '../api'
       doDownload() {
         this.dialogVisible = false
         let params = {
-          path: "/Data-CRADI/data/raw_data_repository/chestXray/chexpert/",
+          // path: "/Data-CRADI/data/raw_data_repository/chestXray/chexpert/",
+          path: "/Data-CRADI",
           email: this.user.email
         }
         this.downloadVisible = true
@@ -273,7 +274,7 @@ import api from '../api'
       padding: 20px;
       .contact-info {
         // padding: 20px;
-      } 
+      }
     }
     .contact-us{
       text-align: center;
