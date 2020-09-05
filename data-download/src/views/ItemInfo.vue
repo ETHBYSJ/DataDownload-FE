@@ -26,19 +26,33 @@
         <el-tab-pane :label="$t('m.Description')" name="first"><Introduction></Introduction></el-tab-pane>
         <el-tab-pane :label="$t('m.License')" name="second"><Agreement></Agreement></el-tab-pane>
       </el-tabs>
+      <div v-if="!enActive" class="body-footer">
+        <p>如遇下载问题，可以联系我们。</p>
+        <br>
+        <br>
+        <p>我们致力于大数据处理、云计算与人工智能方面的研究工作，欢迎科研合作与交流。</p>
+      </div>
+      <div v-else class="body-footer">
+        <p>Please contact us if you have any problems during the downloading.</p>
+        <br>
+        <br>
+        <p>We are committed to the research of big data processing, cloud computing and artificial intelligence, and would welcome the scientific
+          research cooperation and exchange. </p>
+      </div>
+      
     </div>
     <div class="footer">
-      <el-container>
-        <el-main>
+      <el-container v-if="!enActive">
+        <el-main class="footer-main">
         <h2>友情链接</h2>
         <ul class="hyper-links">
-          <li><a href="https://www.sjtu.edu.cn">上海交通大学</a></li>
-          <li><a href="http://www.seiee.sjtu.edu.cn">上海交通大学电子信息与电气工程学院</a></li>
+          <li><a href="http://epcc.sjtu.edu.cn">上海交通大学新兴并行计算研究中心</a></li>
           <li><a href="http://www.cs.sjtu.edu.cn">上海交通大学计算机科学与工程系</a></li>
-          <li><a href="http://epcc.sjtu.edu.cn">上海交通大学EPCC</a></li>
+          <li><a href="http://www.seiee.sjtu.edu.cn">上海交通大学电子信息与电气工程学院</a></li>
+          <li><a href="https://www.sjtu.edu.cn">上海交通大学</a></li>        
         </ul>
         </el-main>
-        <el-aside class="footer-aside">
+        <el-aside class="footer-aside"  width="50%">
           <h2>联系我们</h2>
           <ul class="contact-info">
             <li>电子邮件：yshen@cs.sjtu.edu.cn</li>
@@ -47,7 +61,24 @@
           </ul>
         </el-aside>
       </el-container>
-      <p class="contact-us">我们致力于大数据处理、云计算与人工智能方面的研究工作，如果您希望在这些方面开展科研合作与交流，请联系我们。</p>
+      <el-container v-else>
+        <el-main class="footer-main">
+        <h2>Links</h2>
+        <ul class="hyper-links">
+          <li><a href="http://epcc.sjtu.edu.cn">Emerging Parallel Computing Center, SJTU</a></li>
+          <li><a href="http://www.cs.sjtu.edu.cn">Department of Computer Science and Engineering, SJTU</a></li>
+          <li><a href="http://www.seiee.sjtu.edu.cn">School of Electronic Information and Electrical Engineering, SJTU</a></li>
+          <li><a href="https://www.sjtu.edu.cn">Shanghai Jiao Tong University</a></li>
+        </ul>
+        </el-main>
+        <el-aside class="footer-aside" width="43%">
+          <h2>Contact Us</h2>
+          <ul class="contact-info">
+            <li>E-mail：yshen@cs.sjtu.edu.cn</li>
+            <li>Address：Department of computer science and engineering, Shanghai Jiao Tong University, Shanghai(200240), China</li>
+          </ul>
+        </el-aside>
+      </el-container>
     </div>
     <el-dialog
       :title="$t('m.Agreement')"
@@ -262,6 +293,10 @@ import api from '../api'
   .body {
     padding-left:20%;
     padding-right: 20%;
+    .body-footer{
+      padding : 0 30px;
+      font-size: 15px;
+    }
   }
   .agreement-wrapper {
     // word-break: break-word;
@@ -270,6 +305,9 @@ import api from '../api'
     padding: 0 20%;
     background-color: #f6f9fa;
     color: #585858;
+    .footer-main{
+      padding-left: 10%;
+    }
     .footer-aside{
       padding: 20px;
       .contact-info {

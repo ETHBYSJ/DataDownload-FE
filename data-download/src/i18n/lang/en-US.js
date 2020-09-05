@@ -127,7 +127,7 @@ export const m = {
   License: 'License',
   Language: 'English',
   About1: 'Chest Radiograph Dataset',
-  About2: 'About 80,000 Labeled Data',
+  About2: 'About 10,000 Labeled Data',
   About3: 'Multiple Data Sources',
   NotActivated: 'Not Activated',
   NotActivatedMessage: 'Please enter the verification code you received',

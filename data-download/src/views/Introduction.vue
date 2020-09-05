@@ -3,7 +3,7 @@
     <div v-if="!enActive" class="cn">
       <h2>背景</h2>
       <p>
-        为了更好地研究大规模影像数据集对深度学习模型的训练和推理的影响，以及不同来源数据的影响，我们在此公布一组来自于多家上海三甲医院和社区医院的多中心数据集，数据量、患者数量、多中心、正位胸片、异常结果来自于影像报告的提取.
+        为了更好地研究大规模影像数据集对深度学习模型的训练和推理的影响，以及不同来源数据的影响，我们在此公布一组来自于某家上海三甲医院和社区医院的多中心数据集，数据量、患者数量、多中心、正位胸片、异常结果来自于影像报告的提取.
       </p>
       <el-table
         :data="dataSourceCN"
@@ -56,7 +56,7 @@
         In order to promote the development of the artificial intelligence-assisted diagnosis of chest radiography, we launched the Chest Radiograph at Diverse Institutes (CRADI) dataset. This dataset is comprised of a large number of chest radiographs. Each radiograph has a 25-label disorder annotation, that was established by the terms adopted from the Fleischner’s glossary, and extracted from the original diagnostic report by natural language processing (NLP) and radiologist expertise.
       </p>
       <p>
-        At present, the data of the CRADI dataset comes from two academic hospitals and multiple community clinics in Shanghai. The cases in the CRADI dataset are comprised of in-patients, out-patients, and screening participants.
+        At present, the data of the CRADI dataset comes from one academic hospitals and multiple community clinics in Shanghai. The cases in the CRADI dataset are comprised of in-patients, out-patients, and screening participants.
       </p>
       <p>
         The CRADI dataset provides a better understanding of the multiple and different clinical data sources for chest radiography, which is potentially helpful for the training and test of CNN models.
@@ -122,17 +122,12 @@
       return {
         dataSourceCN: [
           {
-            source: '三甲医院1',
-            num: '74082',
-            index: '0'
-          },
-          {
-            source: '三甲医院2的体检患者',
+            source: '某三甲医院的体检患者',
             num: '2136',
             index: '1'
           },
           {
-            source: '三甲医院2',
+            source: '某三甲医院',
             num: '6005',
             index: '2'
           },
@@ -145,17 +140,12 @@
         ],
         dataSourceEN: [
           {
-            source: 'Academic hospital 1',
-            num: '74082',
-            index: '0'
-          },
-          {
-            source: 'Screening participants from Academic hospital 2',
+            source: 'Screening participants from An Academic hospital',
             num: '2136',
             index: '1'
           },
           {
-            source: 'In-and-out patient from Academic hospital2',
+            source: 'In-and-out patient from An Academic hospital',
             num: '6005',
             index: '2'
           },
