@@ -7,6 +7,7 @@ import Help from "../views/Help";
 // import Help from "../views/Help";
 import Login from "../views/user/Login";
 import Register from "../views/user/Register";
+import Privacy from "../views/out/Privacy"
 // import Files from "../views/Files";
 import NotFound from "../views/errors/404"
 import NoPermission from "../views/errors/403"
@@ -29,6 +30,11 @@ export default [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: Privacy
   },
   {
     path: '/Activate',

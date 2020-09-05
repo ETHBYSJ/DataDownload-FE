@@ -108,7 +108,7 @@
       :visible.sync="downloadVisible"
       :close-on-click-modal="false">
       <div v-if="!enActive">
-        <p>正在处理图像，稍后将向您的邮箱发送下载链接。请注意：<b>图像已经添加了水印。</b></p>
+        <p>正在处理图像，稍后将向您的邮箱发送下载链接。处理时间在3小时以上。请注意：<b>图像已经添加了水印。</b></p>
       </div>
       <div v-else>
         <p>The images are being processed and a download link will be sent to your email later. Please note that <b>the images have been watermarked</b></p>
