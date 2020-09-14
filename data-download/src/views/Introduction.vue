@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="cn">
+    <div v-if="!enActive" class="cn">
       <h2>背景</h2>
       <p>
-        为了更好地研究大规模影像数据集对深度学习模型的训练和推理的影响，以及不同来源数据的影响，我们在此公布一组来自于多家上海三甲医院和社区医院的多中心数据集，数据量、患者数量、多中心、正位胸片、异常结果来自于影像报告的提取.
+        为了更好地研究大规模影像数据集对深度学习模型的训练和推理的影响，以及不同来源数据的影响，我们在此公布一组来自于某家上海三甲医院和社区医院的多中心数据集，数据量、患者数量、多中心、正位胸片、异常结果来自于影像报告的提取.
       </p>
       <el-table
         :data="dataSourceCN"
@@ -38,19 +38,13 @@
       </p>
       <h2>分类结果表</h2>
       <p>
-        表中’patientID’代表图像的文件名，’data_source’代表文件来源，0是三甲医院1的训练数据，1是三甲医院2的测试数据，2是三甲医院体检数据，3是社区医院数据。数据格式如图: |pateintID|data_resource|label1|label2|.......|label25|
+        表中’file_id’代表图像的文件名,"data_source"代表数据来源，含义如表中所示。数据格式如: |file_id|data_source|label1|label2|.......|label25|
       </p>
       <p>
         1)	目前的多源数据中，包括的异常表现，在分类标签重按顺序排列: 气胸，2) 肺气肿，3) 肺内钙化，4) PICC， 5) 动脉弓迂曲，6) 动脉弓钙化，7) 动脉异常，8) 小片影，9) 心影增大，10) 斑片影，11) 肺内阴影，12) 空洞，13) 肺内占位，14) 肺纹理增多，15) 水肿，16) 肺结节，17) 肺门异常，18) 胸腔积液，19) 胸膜增厚，20) 胸膜粘连，21) 胸膜钙化，22) 胸膜异常，23) 脊柱侧弯，24) 起搏器植入后，25) 间质改变。
       </p>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="en">
+    <div v-else class="en">
       <h2>Background</h2>
       <p>
         Chest radiography is extensively used to screen and diagnose pulmonary and cardiac diseases. The advantages of its clinical practicality, efficiency, and cost-effectiveness make chest radiography the most accessible imaging test for pulmonary disorders, especially in primary hospitals. Currently, the interpretation of a chest radiograph mainly relies on radiologists.
@@ -62,7 +56,7 @@
         In order to promote the development of the artificial intelligence-assisted diagnosis of chest radiography, we launched the Chest Radiograph at Diverse Institutes (CRADI) dataset. This dataset is comprised of a large number of chest radiographs. Each radiograph has a 25-label disorder annotation, that was established by the terms adopted from the Fleischner’s glossary, and extracted from the original diagnostic report by natural language processing (NLP) and radiologist expertise.
       </p>
       <p>
-        At present, the data of the CRADI dataset comes from two academic hospitals and multiple community clinics in Shanghai. The cases in the CRADI dataset are comprised of in-patients, out-patients, and screening participants.
+        At present, the data of the CRADI dataset comes from one academic hospitals and multiple community clinics in Shanghai. The cases in the CRADI dataset are comprised of in-patients, out-patients, and screening participants.
       </p>
       <p>
         The CRADI dataset provides a better understanding of the multiple and different clinical data sources for chest radiography, which is potentially helpful for the training and test of CNN models.
@@ -106,11 +100,11 @@
       </p>
       <h2>Classification result</h2>
       <p>
-        Each image links to the label by an item of ‘patientID’.
+        Each image links to the label by an item of ‘file_id’.
       </p>
       <p>
-        data_resource stands for the resource of data. Data sources are listed in the previous table.
-        Result table format: |pateintID|data_resource|label1|label2|.......|label25|
+        data_source stands for the resource of data. Data sources are listed in the previous table.
+        Result table format: |file_id|data_source|label1|label2|.......|label25|
       </p>
       <p>
         The order of the 25 labels is as the following:<br>
@@ -121,54 +115,52 @@
 </template>
 
 <script>
+
   export default {
     name: 'Introduction',
     data() {
       return {
         dataSourceCN: [
           {
-            source: '三甲医院1',
-            num: '70824',
-            index: '0'
-          },
-          {
-            source: '三甲医院2',
-            num: '5996',
+            source: '某三甲医院的体检患者',
+            num: '2136',
             index: '1'
           },
           {
-            source: '三甲医院2的体检患者',
-            num: '2130',
+            source: '某三甲医院',
+            num: '6005',
             index: '2'
           },
+
           {
             source: '4家社区医院数据',
-            num: '1804',
+            num: '1774',
             index: '3'
           }
         ],
         dataSourceEN: [
           {
-            source: 'Academic hospital 1',
-            num: '70824',
-            index: '0'
-          },
-          {
-            source: 'In-and-out patient from Academic hospital2',
-            num: '5996',
+            source: 'Screening participants from An Academic hospital',
+            num: '2136',
             index: '1'
           },
           {
-            source: 'Screening participants from Academic hospital 2',
-            num: '2130',
+            source: 'In-and-out patient from An Academic hospital',
+            num: '6005',
             index: '2'
           },
           {
             source: 'Community clinics',
-            num: '1804',
+            num: '1774',
             index: '3'
           }
         ]
+      }
+    },
+    computed: {
+      enActive(){
+        let lang = this.$i18n.locale;
+        return lang === "en-US" ? true : false;
       }
     }
   }

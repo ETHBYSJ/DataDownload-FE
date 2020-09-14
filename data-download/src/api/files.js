@@ -1,6 +1,23 @@
 import request from './request'
 
 export default {
+  // 创建下载会话
+  downloadSession(data) {
+    return request({
+      url: '/api/v1/file/download_session',
+      method: 'get',
+      params: data
+    })
+  },
+  // 处理一些特殊文件的下载
+  downloadStatic(data) {
+    return request({
+      url: '/api/v1/file/download_static',
+      method: 'post',
+      data: data,
+      responseType: 'blob'
+    })
+  },
   download(data) {
     return request({
       url: '/api/v1/file/download',

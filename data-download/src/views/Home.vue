@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <NavBar></NavBar>
-    <div>
+    <!-- <div>
       <SideMenu class="sidemenu-wrapper"></SideMenu>
-    </div>
+    </div> -->
     <div class="content-app">
       <router-view></router-view>
     </div>
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-  import SideMenu from "../components/SideMenu";
+  // import SideMenu from "../components/SideMenu";
   import NavBar from "../components/NavBar";
   export default {
     name: 'Home',
     components: {
-      SideMenu,
+      // SideMenu,
       NavBar
     },
     mounted() {
@@ -25,13 +25,21 @@
   }
 </script>
 <style lang="less" scoped>
+.container{
+  background-color: white;
   .content-app {
     // padding-top: 20px;
     padding-top: 70px;
-    padding-right: 10px;
-    padding-left: 205px;
+    // padding-right: 10px;
+    // padding-left: 205px;
+
+    // padding-left: 20%;
+    // padding-right: 20%;
+    // max-width: 1500px;
+    min-width: 640px;
   }
-  .sidemenu-wrapper {
-    margin-top: 70px;
-  }
+}
+  // .sidemenu-wrapper {
+  //   margin-top: 70px;
+  // }
 </style>

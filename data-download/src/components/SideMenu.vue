@@ -12,12 +12,13 @@
            active-text-color="#ff4088"
            @open="handleOpen"
            :router="true" :default-active="currentPath">
-    <el-menu-item index="/introduction"><i class="el-icon-info"></i>{{$t('m.Introduction')}}</el-menu-item>
+
+    <el-menu-item index="/instructions"><i class="el-icon-info"></i>{{$t('m.Instructions')}}</el-menu-item>
     <el-menu-item index="/files/"><i class="el-icon-document"></i>{{$t('m.Files')}}</el-menu-item>
     <el-submenu index="about">
       <template slot="title"><i class="el-icon-menu"></i>{{$t('m.About')}}</template>
       <el-menu-item index="/about/agreement">{{$t('m.Agreement')}}</el-menu-item>
-      <el-menu-item index="/about/downloading">{{$t('m.Downloading')}}</el-menu-item>
+      <el-menu-item index="/about/introduction">{{$t('m.Introduction')}}</el-menu-item>
     </el-submenu>
     <!--管理员可见-->
     <el-submenu index="admin" v-if="this.isAuthenticated && this.isAdmin">

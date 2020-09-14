@@ -21,6 +21,20 @@ export default {
       data: data
     })
   },
+  activate_request(data) {
+    return request({
+      url: '/api/v1/user/request_validate',
+      method: 'post',
+      data: data
+    })
+  },
+  activate(data) {
+    return request({
+      url: '/api/v1/user/activate',
+      method: 'post',
+      data: data
+    })
+  },
   getUserInfo() {
     return request({
       url: '/api/v1/user/me',

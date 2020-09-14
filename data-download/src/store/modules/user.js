@@ -4,7 +4,8 @@ import storage from '../../utils/storage'
 import {USER_TYPE} from '../../utils/constants'
 
 const state = {
-  user: {}
+  user: {},
+  userId: 0,
 }
 
 const getters = {
@@ -39,7 +40,14 @@ const mutations = {
       this.$i18n.locale = user.language
     }
     // console.log(state.user)
-  }
+  },
+    // //just for test, remember to comment out
+    // changeUserActive (state) {
+    //   state.user = {...state.user, active:1}
+    // },
+    activateUserId (state, id) {
+      state.userId = id
+    }
 }
 
 const actions = {

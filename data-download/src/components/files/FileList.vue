@@ -9,6 +9,7 @@
     </div>
     <div>
       <ListingItem v-for="(item) in listInfo.items"
+        :file-id="item.id"
         :name="item.name"
         :size="item.size"
         :isDir="item.isDir"
@@ -18,7 +19,8 @@
         :share="item.share"
         :key="item.name"
         :review="item.review"
-        v-on:delete="onDelete">
+        v-on:delete="onDelete"
+        v-on:context-menu="emitContextMenu">
       </ListingItem>
     </div>
   </div>
@@ -46,6 +48,10 @@
     methods: {
       onDelete() {
         this.$emit('delete')
+      },
+      // context-menu 消息中继
+      emitContextMenu(fileId,e){
+        this.$emit('context-menu',fileId,e)
       }
     },
     computed: {

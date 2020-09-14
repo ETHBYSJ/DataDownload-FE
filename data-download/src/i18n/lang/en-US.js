@@ -1,4 +1,5 @@
 export const m = {
+  Title: 'Image Sharing Platform',
   Home: 'Home',
   Login: 'Login',
   Register:'Register',
@@ -86,6 +87,7 @@ export const m = {
   Privacy: 'Set Privacy',
   Set_Share_Success: 'Set Share Status Success',
   Set_Share_Error: 'Set Share Status Error',
+  Change_Share_State: 'Change Share',
   Go_Home: 'Go Home',
   Back: 'Back',
   Introduction: 'Introduction',
@@ -119,5 +121,18 @@ export const m = {
   Update_Review_Success: 'Update Review Status Success',
   Update_Review_Error: 'Update Review Status Error',
   Download_Error: 'Download Error',
-  File_Private: 'This File is Private'
+  File_Private: 'This File is Private',
+  Instructions: 'Instructions',
+  Description: 'Description',
+  License: 'License',
+  Language: 'English',
+  About1: 'Chest Radiograph Dataset',
+  About2: 'About 10,000 Labeled Data',
+  About3: 'Multiple Data Sources',
+  NotActivated: 'Not Activated',
+  NotActivatedMessage: 'Please enter the verification code you received',
+  CodeError: 'Verification code format error',
+  ActivateSucceed: 'Activation Succeed',
+  ActivateFail: 'Activation Fail',
+  DownloadNotice: 'Request Succeed'
 }
