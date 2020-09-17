@@ -25,6 +25,7 @@
       <el-tabs v-model="tabActiveName" >
         <el-tab-pane :label="$t('m.Description')" name="first"><Introduction></Introduction></el-tab-pane>
         <el-tab-pane :label="$t('m.License')" name="second"><Agreement></Agreement></el-tab-pane>
+        <el-tab-pane :label="$t('m.Model')" name="third"><Model></Model></el-tab-pane>
       </el-tabs>
       <div v-if="!enActive" class="body-footer">
         <p>如遇下载问题，可以联系我们。</p>
@@ -154,6 +155,7 @@
 <script>
 import Introduction from './Introduction'
 import Agreement from './Agreement'
+import Model from './Model'
 import {mapGetters} from 'vuex'
 
 import api from '../api'
@@ -162,7 +164,8 @@ import api from '../api'
     name: "ItemInfo",
     components : {
       Introduction,
-      Agreement
+      Agreement,
+      Model
     },
     data: function () {
       return{

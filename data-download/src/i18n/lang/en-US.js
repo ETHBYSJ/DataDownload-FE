@@ -134,5 +134,6 @@ export const m = {
   CodeError: 'Verification code format error',
   ActivateSucceed: 'Activation Succeed',
   ActivateFail: 'Activation Fail',
-  DownloadNotice: 'Request Succeed'
+  DownloadNotice: 'Request Succeed',
+  Model: 'Model'
 }

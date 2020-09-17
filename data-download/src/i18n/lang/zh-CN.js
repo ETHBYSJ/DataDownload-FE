@@ -135,5 +135,6 @@ export const m = {
   CodeError: '验证码格式错误',
   ActivateSucceed: '激活成功',
   ActivateFail: '激活失败',
-  DownloadNotice: 'Request Succeed'
+  DownloadNotice: '请求成功',
+  Model: '模型'
 }
