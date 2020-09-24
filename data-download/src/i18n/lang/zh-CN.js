@@ -131,7 +131,7 @@ export const m = {
   About2: '约10,000带标签的数据',
   About3: '多数据源',
   NotActivated: '未激活',
-  NotActivatedMessage: '请输入收到的验证码',
+  NotActivatedMessage: '请输入注册邮箱中收到的验证码',
   CodeError: '验证码格式错误',
   ActivateSucceed: '激活成功',
   ActivateFail: '激活失败',

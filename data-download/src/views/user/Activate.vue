@@ -120,9 +120,9 @@
         text-align: center;
         font-size: 20px;
         font-weight: 500;
-        letter-spacing: 5px;
+        letter-spacing: 3px;
         color: #87878d;
-        margin: 20px 0;
+        margin: 20px 60px;
       }
       .code{
         margin-top: 40px;

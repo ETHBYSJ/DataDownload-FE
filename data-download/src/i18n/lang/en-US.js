@@ -130,7 +130,7 @@ export const m = {
   About2: 'About 10,000 Labeled Data',
   About3: 'Multiple Data Sources',
   NotActivated: 'Not Activated',
-  NotActivatedMessage: 'Please enter the verification code you received',
+  NotActivatedMessage: 'Please enter the verification code you received in your email',
   CodeError: 'Verification code format error',
   ActivateSucceed: 'Activation Succeed',
   ActivateFail: 'Activation Fail',
